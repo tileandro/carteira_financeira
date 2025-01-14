@@ -10,4 +10,4 @@ define('DBPORT', 3306);
 define('CHAVE', 'DFSFREG654675FF435345GH');
 
 //Tempo do token em segundos
-define('TEMPO_TOKEN', 100000);
+define('TEMPO_TOKEN', 120);

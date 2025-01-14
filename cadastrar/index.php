@@ -184,6 +184,15 @@ require $_SERVER['DOCUMENT_ROOT'] . '/footer.php';
             }
         })
 
+        $('input[name=senha], input[name=confirmasenha]').click(function() {
+            if ($('input[name=senha]').val() == '' && $('input[name=confirmasenha]').val() == '') {
+                $('.submit').prop("disabled", true);
+                $('.msgSenha').removeClass('d-none');
+                $('.msgSenha .alert').removeClass('alert-success');
+                $('.msgSenha .alert').addClass('alert-danger')
+                $('.msgSenha .text-alert').html('Campos de Senhas não podem ser vazios!')
+            }
+        })
 
         $('input[name=confirmasenha]').keyup(function() {
             if ($('input[name=senha]').val() != $('input[name=confirmasenha]').val()) {

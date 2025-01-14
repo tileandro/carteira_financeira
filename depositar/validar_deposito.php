@@ -1,5 +1,4 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/inc/valida_token.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/inc/def.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
