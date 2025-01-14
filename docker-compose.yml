@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:    
+  php-apache:
+    container_name: carteira-financeira
+    restart: always
+    ports:
+      - "81:8080"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - "networks-php-general"
+    build:
+      context: ./
+      dockerfile: dockerfile
+  
+  mysql: 
+    image: "mysql:latest"
+    container_name: "mysql-php-general"
+    restart: always
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "default-base"
+      MYSQL_USER: "guest"
+      MYSQL_PASSWORD: ""
+    ports:
+      - "3307:3306"
+    networks:
+      - "networks-php-general"
+
+networks:
+  networks-php-general:
+    driver: "bridge"
